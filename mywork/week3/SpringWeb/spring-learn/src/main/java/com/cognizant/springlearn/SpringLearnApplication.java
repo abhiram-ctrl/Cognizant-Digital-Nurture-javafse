@@ -18,8 +18,6 @@ public class SpringLearnApplication {
         SpringApplication.run(SpringLearnApplication.class, args);
 
         LOGGER.info("Inside main()");
-
-        displayCountry();
     }
 
     private static void displayCountry() {
