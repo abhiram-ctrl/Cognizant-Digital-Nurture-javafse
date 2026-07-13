@@ -1,58 +1,104 @@
-# Spring Learn
+# Spring Learn - Week 3
 
-## Week 3 - Spring Web and Spring Core XML Configuration
+## Overview
 
-### Objectives
+This project contains the Week 3 Spring Web and REST hands-on exercises from the Cognizant Java FSE Deep Skilling program.
 
-- Create a Spring Boot Web project using Maven
-- Configure Spring beans using XML
-- Load beans using ApplicationContext
-- Read bean properties
-- Display bean details using logging
-
----
-
-## Technologies
+## Technologies Used
 
 - Java 21
 - Spring Boot
 - Spring Web
-- Spring Context
+- Spring Core
+- Spring Security
+- JWT
 - Maven
+- SLF4J
 
----
+## Exercises Implemented
 
-## Project Structure
+### 1. Spring Web Project
 
-```
-spring-learn
-│
-├── Country.java
-├── SpringLearnApplication.java
-├── resources
-│     ├── application.properties
-│     └── country.xml
-└── pom.xml
-```
+Created a Spring Boot Maven project using Spring Web and Spring Boot DevTools.
 
----
+### 2. Load Country from Spring XML Configuration
 
-## XML Bean
+Configured country details using `country.xml`.
 
-```xml
-<bean id="country"
-      class="com.cognizant.springlearn.Country">
+The Spring ApplicationContext loads the Country bean from the XML configuration.
 
-    <property name="code" value="IN"/>
-    <property name="name" value="India"/>
+### 3. Hello World REST Service
 
-</bean>
-```
+Endpoint:
 
----
+GET /hello
 
-## Output
+Response:
 
-- Spring Boot application started successfully.
-- Country bean loaded from XML configuration.
-- Country details displayed using SLF4J logging.
+Hello World!!
+
+### 4. Country REST Service
+
+Endpoint:
+
+GET /country
+
+Sample Response:
+
+{
+  "code": "IN",
+  "name": "India"
+}
+
+### 5. Get Country by Country Code
+
+Endpoint:
+
+GET /countries/{code}
+
+The country code comparison is case-insensitive.
+
+Example:
+
+GET /countries/in
+
+### 6. JWT Authentication Service
+
+Endpoint:
+
+GET /authenticate
+
+The authentication endpoint uses HTTP Basic Authentication.
+
+Credentials:
+
+Username: user
+Password: pwd
+
+After successful authentication, the service generates and returns a JWT token.
+
+Sample Response:
+
+{
+  "token": "eyJ..."
+}
+
+## Security Configuration
+
+The `/authenticate` endpoint requires authentication.
+
+Other REST endpoints are publicly accessible.
+
+## Concepts Covered
+
+- Spring Boot
+- Spring ApplicationContext
+- XML Bean Configuration
+- Dependency Injection
+- REST Controllers
+- Path Variables
+- JSON Serialization
+- Spring Security
+- HTTP Basic Authentication
+- JWT Token Generation
+- SLF4J Logging
