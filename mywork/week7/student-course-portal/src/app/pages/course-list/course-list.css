@@ -1,0 +1,23 @@
+.course{
+
+padding:15px;
+
+margin:15px;
+
+border-radius:8px;
+
+border:1px solid gray;
+
+}
+
+.completed{
+
+border-left:8px solid green;
+
+}
+
+.pending{
+
+border-left:8px solid red;
+
+}

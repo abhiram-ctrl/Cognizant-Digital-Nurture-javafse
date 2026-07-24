@@ -1,0 +1,17 @@
+hr{
+    margin:25px 0;
+}
+
+img{
+    margin-top:10px;
+}
+
+input{
+    padding:8px;
+    width:250px;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}

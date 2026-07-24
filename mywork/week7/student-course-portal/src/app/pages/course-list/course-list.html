@@ -1,0 +1,81 @@
+<h1>Course List</h1>
+
+<hr>
+
+<h2>*ngIf Demo</h2>
+
+<div *ngIf="showCourses">
+
+Courses Available
+
+</div>
+
+<hr>
+
+<h2>*ngFor Demo</h2>
+
+<div
+
+*ngFor="let course of courses"
+
+appHighlight
+
+class="course"
+
+[ngClass]="{
+
+completed: course.completed,
+
+pending: !course.completed
+
+}"
+
+[ngStyle]="{
+
+fontSize:'18px'
+
+}">
+
+<h3>
+
+{{course.name}}
+
+</h3>
+
+<p>
+
+Credits :
+
+{{course.credits | creditLabel}}
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>*ngSwitch Demo</h2>
+
+<div
+
+[ngSwitch]="selectedCategory">
+
+<p *ngSwitchCase="'Programming'">
+
+Programming Courses
+
+</p>
+
+<p *ngSwitchCase="'Database'">
+
+Database Courses
+
+</p>
+
+<p *ngSwitchDefault>
+
+Others
+
+</p>
+
+</div>

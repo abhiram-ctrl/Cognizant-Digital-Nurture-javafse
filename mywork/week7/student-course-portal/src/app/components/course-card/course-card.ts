@@ -1,0 +1,30 @@
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-course-card',
+  standalone: true,
+  imports: [],
+  templateUrl: './course-card.html',
+  styleUrl: './course-card.css'
+})
+export class CourseCard {
+
+  @Input()
+
+  courseName='';
+
+  @Input()
+
+  trainer='';
+
+  @Output()
+
+  enroll=new EventEmitter<string>();
+
+  enrollCourse(){
+
+    this.enroll.emit(this.courseName);
+
+  }
+
+}

@@ -1,0 +1,56 @@
+<h1>Student Course Portal</h1>
+
+<hr>
+
+<h2>Interpolation</h2>
+
+<p>Welcome {{studentName}}</p>
+
+<hr>
+
+<h2>Property Binding</h2>
+
+<img
+[src]="courseImage"
+width="120">
+
+<hr>
+
+<h2>Two Way Binding</h2>
+
+<input
+type="text"
+[(ngModel)]="selectedCourse">
+
+<p>
+
+Selected Course :
+
+{{selectedCourse}}
+
+</p>
+
+<hr>
+
+<h2>Event Binding</h2>
+
+<button
+(click)="showWelcome()">
+
+Click Me
+
+</button>
+
+<hr>
+
+<h2>Parent → Child Communication</h2>
+
+<app-course-card
+
+[courseName]="selectedCourse || 'Angular 20'"
+
+[trainer]="trainerName"
+
+(enroll)="onEnroll($event)">
+
+</app-course-card>
